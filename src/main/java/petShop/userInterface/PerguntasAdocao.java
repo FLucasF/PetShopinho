@@ -16,7 +16,7 @@ public class PerguntasAdocao {
     /**
      * Método que é utilizado para fazer as perguntas necessárias para criar
      * um objeto do tipo Adoção.
-     * @return animalCadastrado
+     * @return animal a ser cadastrado.
      */
     public Adocao perguntaCadastrarAnimal() {
 
@@ -173,7 +173,7 @@ public class PerguntasAdocao {
     /**
      * Método que é utilizado para fazer as perguntas necessárias para
      * pegar o tamanho a ser pesquisado e ser utilizado no método pesquisarAnimalPeloTamanho.
-     * @return tamanhoAnimal.
+     * @return tamanho do animal.
      */
     public  String perguntaPesquisarAnimalTamanho() {
         boolean continuar;

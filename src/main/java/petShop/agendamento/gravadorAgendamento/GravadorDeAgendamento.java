@@ -21,8 +21,8 @@ public class GravadorDeAgendamento {
      * Método que recebe uma List do tipo Agendamento, que enquanto for percorrida, pega todos os atributos
      * salva em uma string, usando # como separador, e transforma tudo em uma lista de string, logo
      * depois utiliza o metodo gravarTextoEmArquivo para gravar em txt.
-     * @param agendamentos
-     * @throws IOException
+     * @param agendamentos lista de agendamentos.
+     * @throws IOException que é lançado quando algum sinal de entrada/saída falha ou é interrompido.
      */
     public void gravaAgendamento(List<Agendamento> agendamentos) throws IOException {
         List<String> textoAGravar = new ArrayList<>();
@@ -39,8 +39,8 @@ public class GravadorDeAgendamento {
     /***
      * Método retorna uma arraylist do tipo Agendamento, que le a pasta txt e utilizando o separador, cria
      * um objeto do tipo Agendamento e logo em seguida adiciona ele na lista agendamentos.
-     * @return ArrayList<Agendamento> listaAgendamento
-     * @throws IOException
+     * @return uma arraylist do tipo agendamento.
+     * @throws IOException que é lançado quando algum sinal de entrada/saída falha ou é interrompido.
      */
     public ArrayList<Agendamento> recuperarAgendamento() throws IOException {
         List<String> dadosDosAnimais = this.gravadorAgendamento.recuperaTextoDeArquivo(this.arquivoAdocao);

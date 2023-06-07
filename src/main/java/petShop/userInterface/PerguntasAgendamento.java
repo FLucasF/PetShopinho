@@ -162,7 +162,7 @@ public class PerguntasAgendamento {
     /**
      * Método que é utilizado para fazer as perguntas necessárias para
      * pegar o dia a ser pesquisado e ser utilizado no método pesquisaAgendamentoPeloDia.
-     * @return diaAgendamentoVerificar.
+     * @return diaAgendamento a ser verificado.
      */
     public String perguntaPesquisarBaseadoNoDia() {
 

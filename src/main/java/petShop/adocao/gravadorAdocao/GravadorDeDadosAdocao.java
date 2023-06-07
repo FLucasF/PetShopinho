@@ -9,9 +9,9 @@ public class GravadorDeDadosAdocao {
      * Método que recebe o nome do arquivo que vai ser lido, com o leitor pega o arquivo,
      * vai ler a linha, se a linha não for null, vai adicionar na array texto lido, depois de finalizar
      * ele vai retornar a lista com todas as strings.
-     * @param nomeArquivo
-     * @return
-     * @throws IOException
+     * @param nomeArquivo nome do arquivo que irá ser recuperado os dados.
+     * @return retorna uma lista de Strings
+     * @throws IOException que é lançado quando algum sinal de entrada/saída falha ou é interrompido.
      */
     public List<String> recuperaTextoDeArquivo(String nomeArquivo) throws IOException{
         BufferedReader leitor = null;
@@ -34,10 +34,10 @@ public class GravadorDeDadosAdocao {
     }
 
     /***
-
-     * @param texto
-     * @param nomeArquivo
-     * @throws IOException
+     * Método que grava os dados da agendamento
+     * @param texto lista de dados a serem gravados.
+     * @param nomeArquivo nome do arquivo a ser gravado.
+     * @throws IOException que é lançado quando algum sinal de entrada/saída falha ou é interrompido.
      */
     public void gravaTextoEmArquivo(List<String> texto, String nomeArquivo) throws IOException{
 

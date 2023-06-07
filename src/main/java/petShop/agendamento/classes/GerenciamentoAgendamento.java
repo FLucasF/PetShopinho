@@ -22,10 +22,11 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
 
     /**
      * Método utilizado para cadastrar o agendamento.
-     * @param animalAgendamento
+     * @param animalAgendamento tem como parametro um objeto Agendamento que vai ser cadastrado na
+     *                          lista Agendamentos.
      * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
-     * @throws HorarioInformadoExisteException
-     * @throws HorarioNaoInformadoException
+     * @throws HorarioInformadoExisteException que é lançado quando o horário informado ja existe.
+     * @throws HorarioNaoInformadoException que é lançado quando o horário não foi informado.
      */
     @Override
     public boolean cadastrarAgendamento(Agendamento animalAgendamento) throws HorarioInformadoExisteException, HorarioNaoInformadoException{
@@ -37,19 +38,17 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
                 throw new HorarioNaoInformadoException("O horário não foi informado corretamente.");
             }
         }
-        if (this.agendamentos.add(animalAgendamento)) {
-            return true;
-        }
-        return false;
+        return this.agendamentos.add(animalAgendamento);
+
     }
 
     /**
      * Método utilizado para pesquisar o agendamento baseado no dia informado.
-     * @param diaAgendamentoVerificar
+     * @param diaAgendamentoVerificar dia de agendamento que vai ser verifica.
      * @return msg, que no caso, é uma String concatenada com todos os objetos que tem como atributo
      * o dia informado.
-     * @throws AgendamentoNaoEncontradoException
-     * @throws ListaAgendamentoVaziaException
+     * @throws AgendamentoNaoEncontradoException que é lançado quando agendamento não é encontrado.
+     * @throws ListaAgendamentoVaziaException que é lançado quando lista de agendamento se encontra vazia.
      */
 
     @Override
@@ -67,13 +66,13 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
             }
             return msg.toString();
         }
-        throw new ListaAgendamentoVaziaException("A lista de agendamentos está vazia."); //TODO: Verificar se a mensagem está correta
+        throw new ListaAgendamentoVaziaException("A lista de agendamentos está vazia.");
     }
 
     /**
      * Método utilizado para obter uma lista dos objetos da lista de agendamentos.
      * @return List<Agendamento>, retorna a lista de todos os objetos cadastrados na lista agendamentos.
-     * @throws ListaAgendamentoVaziaException
+     * @throws ListaAgendamentoVaziaException que é lançado quando a lista de agendamento se encontra vazia.
      */
     @Override
     public List<Agendamento> obterListaDeAgendamento() throws ListaAgendamentoVaziaException {
@@ -85,10 +84,10 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
 
     /**
      * Método utilizado para deletar o agendamento cujo o nome do animal seja igual ao do informado.
-     * @param nomeDoAnimal
+     * @param nomeDoAnimal nome do animal a ser deletado.
      * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
-     * @throws ListaAgendamentoVaziaException
-     * @throws AgendamentoNaoEncontradoException
+     * @throws ListaAgendamentoVaziaException que é lançado quando lista de agendamento se encontra vazia.
+     * @throws AgendamentoNaoEncontradoException que é lançado quando o Agendamento não é encontrado.
      */
     @Override
     public boolean deletarAgendamento(String nomeDoAnimal) throws ListaAgendamentoVaziaException, AgendamentoNaoEncontradoException {

@@ -25,8 +25,8 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
      * Método utilizado para cadastrar o animal a ser adotado.
      * @param animalCadastrar
      * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
-     * @throws AnimalInformadoIncorretamenteException
-     * @throws FalhaAoCadastrarAnimalException
+     * @throws AnimalInformadoIncorretamenteException é lançado quando animal foi informado de forma incorreta.
+     * @throws FalhaAoCadastrarAnimalException é lançado quando há uma falha no cadastro do animal
      */
     @Override
     public boolean cadastrarAnimal (Adocao animalCadastrar) throws AnimalInformadoIncorretamenteException, FalhaAoCadastrarAnimalException{
@@ -45,8 +45,8 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
      * @param tamanhoDoAnimalVerificar
      * @return msg, que no caso, é uma String concatenada com todos os objetos que tem como atributo
      * o tamanho informado.
-     * @throws AnimalNaoEncontradoException
-     * @throws ListaAnimalVaziaException
+     * @throws AnimalNaoEncontradoException é lançado quando o animal não é encontrado.
+     * @throws ListaAnimalVaziaException é lançado quando a lista de animal se encontra vazia.
      */
     @Override
     public String pesquisarAnimalPeloTamanho(String tamanhoDoAnimalVerificar) throws AnimalNaoEncontradoException, ListaAnimalVaziaException {
@@ -68,7 +68,7 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
     /**
      * Método utilizado para obter a lista de todos os objetos contidos na lista animais.
      * @return List<Adocao>
-     * @throws ListaAnimalVaziaException
+     * @throws ListaAnimalVaziaException é lançado quando a lista de animais encontra-se vazia.
      */
 
     @Override
@@ -83,7 +83,7 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
      * Método utilizado para deletar o animal cujo o nome seja igual ao do informado.
      * @param nomeDoAnimal
      * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
-     * @throws AnimalNaoEncontradoException
+     * @throws AnimalNaoEncontradoException é lançado quando o animal não é encontrado.
      */
     @Override
     public boolean deletarAnimal(String nomeDoAnimal) throws AnimalNaoEncontradoException {
