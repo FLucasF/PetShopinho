@@ -1,5 +1,10 @@
 package petShop.agendamento.enums;
 
+/***
+ * Classe para métodos do tipo DiaAgendamento, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
+
 public enum DiaAgendamento {
     NAO_INFORMADO("Não informado"),
     SEGUNDA_FEIRA("Segunda-feira"),

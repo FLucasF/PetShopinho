@@ -2,6 +2,11 @@ package petShop.userInterface;
 
 import javax.swing.*;
 
+/***
+ * Classe para métodos do tipo Menu, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
+
 public class Menu {
     public static String exibirMenu() { //Menu principal
         return JOptionPane.showInputDialog(null, """

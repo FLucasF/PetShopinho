@@ -2,6 +2,11 @@ package petShop.agendamento.classes;
 
 import petShop.adocao.classes.Adocao;
 
+/***
+ *Classe para objetos do tipo Agendamento, onde serão contidos, valores e métodos para o mesmo.
+ *@author Lucas Felipe
+ */
+
 public class Agendamento {
     private DonoAnimal donoAnimal;
     private Adocao animal;

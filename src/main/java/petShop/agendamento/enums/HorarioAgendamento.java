@@ -1,5 +1,10 @@
 package petShop.agendamento.enums;
 
+/***
+ * Classe para métodos do tipo HorarioAgendamento, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
+
 public enum HorarioAgendamento {
     NAO_INFORMADO("Não informado"),
     OITO_HORAS("08:00"),

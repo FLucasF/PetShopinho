@@ -1,5 +1,10 @@
 package petShop.agendamento.enums;
 
+/***
+ * Classe para métodos do tipo TipoDeServico, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
+
 public enum TipoDeServico {
     TOSA("Tosa"),
     BANHO("Banho"),

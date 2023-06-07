@@ -1,13 +1,18 @@
 package petShop.adocao.classes;
 
+
 import petShop.adocao.InterfaceAdocao;
 import petShop.adocao.exceptions.AnimalInformadoIncorretamenteException;
 import petShop.adocao.exceptions.AnimalNaoEncontradoException;
 import petShop.adocao.exceptions.FalhaAoCadastrarAnimalException;
 import petShop.adocao.exceptions.ListaAnimalVaziaException;
-
 import java.util.ArrayList;
 import java.util.List;
+
+/***
+ * Classe para metodos do tipo adocao, onde serão contidos, métodos para o mesmo.
+ * @author Lucas Felipe
+ */
 
 public class GerenciamentoAdocao implements InterfaceAdocao {
     private ArrayList<Adocao> animais;
@@ -16,6 +21,13 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
         this.animais = new ArrayList<>();
     }
 
+    /**
+     * Método utilizado para cadastrar o animal a ser adotado.
+     * @param animalCadastrar
+     * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
+     * @throws AnimalInformadoIncorretamenteException
+     * @throws FalhaAoCadastrarAnimalException
+     */
     @Override
     public boolean cadastrarAnimal (Adocao animalCadastrar) throws AnimalInformadoIncorretamenteException, FalhaAoCadastrarAnimalException{
         if (animalCadastrar.getNomeAnimal() == (null)) { //VERIFICAR COMO VERIFICAR SE TODOS SÃO NULOS
@@ -28,6 +40,14 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
             }
         }
     }
+    /**
+     * Método utilizado para pesquisar animal pelo tamanho  na lista de adoção.
+     * @param tamanhoDoAnimalVerificar
+     * @return msg, que no caso, é uma String concatenada com todos os objetos que tem como atributo
+     * o tamanho informado.
+     * @throws AnimalNaoEncontradoException
+     * @throws ListaAnimalVaziaException
+     */
     @Override
     public String pesquisarAnimalPeloTamanho(String tamanhoDoAnimalVerificar) throws AnimalNaoEncontradoException, ListaAnimalVaziaException {
         if (!this.animais.isEmpty()) {
@@ -45,6 +65,12 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
         throw new ListaAnimalVaziaException("A lista animais se encontra vazia.");
     }
 
+    /**
+     * Método utilizado para obter a lista de todos os objetos contidos na lista animais.
+     * @return List<Adocao>
+     * @throws ListaAnimalVaziaException
+     */
+
     @Override
     public List<Adocao> obterListaDeAnimais() throws ListaAnimalVaziaException {
         if (!this.animais.isEmpty()) {
@@ -53,6 +79,12 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
         throw new ListaAnimalVaziaException("A lista animais se encontra vazia.");
     }
 
+    /**
+     * Método utilizado para deletar o animal cujo o nome seja igual ao do informado.
+     * @param nomeDoAnimal
+     * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
+     * @throws AnimalNaoEncontradoException
+     */
     @Override
     public boolean deletarAnimal(String nomeDoAnimal) throws AnimalNaoEncontradoException {
         if (!this.animais.isEmpty()) {
@@ -66,10 +98,6 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
         }
         throw new AnimalNaoEncontradoException("Animal não encontrado na lista animais.");
     }
-
-
-
-
 
     public ArrayList<Adocao> getAnimais() {
         return this.animais;

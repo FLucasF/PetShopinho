@@ -3,10 +3,21 @@ package petShop.userInterface;
 import petShop.adocao.classes.Adocao;
 import petShop.adocao.enums.Comportamento;
 import petShop.adocao.enums.TamanhoAnimal;
-
 import javax.swing.*;
 
+/***
+ * Classe para métodos do tipo Perguntas adoção, onde serão contidos, todas as perguntas utilizdas
+ * na hora de criar um objeto do tipo Adocao.
+ * @author Lucas Felipe
+ */
+
 public class PerguntasAdocao {
+
+    /**
+     * Método que é utilizado para fazer as perguntas necessárias para criar
+     * um objeto do tipo Adoção.
+     * @return animalCadastrado
+     */
     public Adocao perguntaCadastrarAnimal() {
 
         UIManager.put("OptionPane.cancelButtonText", "Cancelar");
@@ -159,6 +170,11 @@ public class PerguntasAdocao {
         return animalCadastrado;
     }
 
+    /**
+     * Método que é utilizado para fazer as perguntas necessárias para
+     * pegar o tamanho a ser pesquisado e ser utilizado no método pesquisarAnimalPeloTamanho.
+     * @return tamanhoAnimal.
+     */
     public  String perguntaPesquisarAnimalTamanho() {
         boolean continuar;
         String tamanhoAnimal = "";
@@ -195,6 +211,11 @@ public class PerguntasAdocao {
         return tamanhoAnimal;
     }
 
+    /**
+     * Método que é utilizado para fazer a pergunta necessária para deletar
+     * um objeto do tipo Adoção.
+     * @return o nome do animal a ser deletado
+     */
     public String perguntaDeletarAnimal() {
 
         UIManager.put("OptionPane.cancelButtonText", "Cancelar");

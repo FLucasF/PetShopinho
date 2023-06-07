@@ -2,6 +2,11 @@ package petShop.agendamento.classes;
 
 import java.util.Objects;
 
+/***
+ * Classe para métodos do tipo Horario, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
+
 public class Horario {
     private String dia;
     private String horario;

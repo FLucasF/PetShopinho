@@ -5,9 +5,13 @@ import petShop.agendamento.exceptions.AgendamentoNaoEncontradoException;
 import petShop.agendamento.exceptions.HorarioInformadoExisteException;
 import petShop.agendamento.exceptions.HorarioNaoInformadoException;
 import petShop.agendamento.exceptions.ListaAgendamentoVaziaException;
-
 import java.util.ArrayList;
 import java.util.List;
+
+/***
+ * Classe para métodos do tipo Agendamento, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
 
 public class GerenciamentoAgendamento implements InterfaceAgendamento {
     private ArrayList<Agendamento> agendamentos;
@@ -16,6 +20,13 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
         this.agendamentos = new ArrayList<>();
     }
 
+    /**
+     * Método utilizado para cadastrar o agendamento.
+     * @param animalAgendamento
+     * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
+     * @throws HorarioInformadoExisteException
+     * @throws HorarioNaoInformadoException
+     */
     @Override
     public boolean cadastrarAgendamento(Agendamento animalAgendamento) throws HorarioInformadoExisteException, HorarioNaoInformadoException{
         for (Agendamento a : this.agendamentos) {
@@ -31,6 +42,15 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
         }
         return false;
     }
+
+    /**
+     * Método utilizado para pesquisar o agendamento baseado no dia informado.
+     * @param diaAgendamentoVerificar
+     * @return msg, que no caso, é uma String concatenada com todos os objetos que tem como atributo
+     * o dia informado.
+     * @throws AgendamentoNaoEncontradoException
+     * @throws ListaAgendamentoVaziaException
+     */
 
     @Override
     public String pesquisarAgendamentoBaseadoNoDia(String diaAgendamentoVerificar) throws AgendamentoNaoEncontradoException, ListaAgendamentoVaziaException {
@@ -50,6 +70,11 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
         throw new ListaAgendamentoVaziaException("A lista de agendamentos está vazia."); //TODO: Verificar se a mensagem está correta
     }
 
+    /**
+     * Método utilizado para obter uma lista dos objetos da lista de agendamentos.
+     * @return List<Agendamento>, retorna a lista de todos os objetos cadastrados na lista agendamentos.
+     * @throws ListaAgendamentoVaziaException
+     */
     @Override
     public List<Agendamento> obterListaDeAgendamento() throws ListaAgendamentoVaziaException {
         if (!this.agendamentos.isEmpty()) {
@@ -58,6 +83,13 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
         throw new ListaAgendamentoVaziaException("A lista está vazia, adicione algum animal para poder lista-la!");
     }
 
+    /**
+     * Método utilizado para deletar o agendamento cujo o nome do animal seja igual ao do informado.
+     * @param nomeDoAnimal
+     * @return boolean, true caso consiga cadastrar e false caso não consiga cadastrar.
+     * @throws ListaAgendamentoVaziaException
+     * @throws AgendamentoNaoEncontradoException
+     */
     @Override
     public boolean deletarAgendamento(String nomeDoAnimal) throws ListaAgendamentoVaziaException, AgendamentoNaoEncontradoException {
         if (!this.agendamentos.isEmpty()) {
@@ -71,7 +103,6 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
         }
         throw new ListaAgendamentoVaziaException("A lista de agendamentos está vazia, cadastre algo e tente novamente!");
     }
-
 
 
     public ArrayList<Agendamento> getAgendamentos() {

@@ -7,12 +7,22 @@ import petShop.agendamento.classes.Horario;
 import petShop.agendamento.enums.DiaAgendamento;
 import petShop.agendamento.enums.HorarioAgendamento;
 import petShop.agendamento.enums.TipoDeServico;
-
 import javax.swing.*;
+
+/***
+ * Classe para métodos do tipo Perguntas Agendamento, onde serão contidos, todas as perguntas utilizdas
+ * na hora de criar um objeto do tipo Agendamento.
+ * @author Lucas Felipe
+ */
 
 public class PerguntasAgendamento {
     private final PerguntasAdocao perguntasAdocao = new PerguntasAdocao();
 
+    /**
+     * Método que é utilizado para fazer as perguntas necessárias para criar
+     * um objeto do tipo Agendamento.
+     * @return animalAgendado
+     */
     public Agendamento perguntaAgendamento() {
 
         UIManager.put("OptionPane.cancelButtonText", "Cancelar");
@@ -68,11 +78,16 @@ public class PerguntasAgendamento {
             return new Agendamento();
         }
 
-        Agendamento agendamento = new Agendamento(donoAnimal, animal, horario, tipoDeServico);
+        Agendamento animalAgendado = new Agendamento(donoAnimal, animal, horario, tipoDeServico);
 
-        return agendamento;
+        return animalAgendado;
     }
 
+    /**
+     * Método que é utilizado para fazer as perguntas necessárias para criar
+     * um objeto do tipo Horario.
+     * @return o dia e a hora escolhida.
+     */
     public Horario perguntaHorario() {
 
         UIManager.put("OptionPane.cancelButtonText", "Cancelar");
@@ -146,6 +161,11 @@ public class PerguntasAgendamento {
         return new Horario(diaAgendamento, horaAgendamento);
     }
 
+    /**
+     * Método que é utilizado para fazer as perguntas necessárias para
+     * pegar o dia a ser pesquisado e ser utilizado no método pesquisaAgendamentoPeloDia.
+     * @return diaAgendamentoVerificar.
+     */
     public String perguntaPesquisarBaseadoNoDia() {
 
         UIManager.put("OptionPane.cancelButtonText", "Cancelar");
@@ -185,6 +205,11 @@ public class PerguntasAgendamento {
         return diaAgendamentoVerificar;
     }
 
+    /**
+     * Método que é utilizado para fazer a pergunta necessária para deletar
+     * um objeto do tipo Agendamento.
+     * @return o nome do animal a ser deletado
+     */
     public String perguntaDeletarAgendamento() {
         UIManager.put("OptionPane.cancelButtonText", "Cancelar");
         return JOptionPane.showInputDialog(null, "Digite o nome do animal que deseja deletar: ", "Nome do Animal", JOptionPane.QUESTION_MESSAGE);

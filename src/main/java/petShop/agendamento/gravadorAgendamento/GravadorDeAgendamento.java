@@ -1,4 +1,4 @@
-package petShop.agendamento.gerenciamentoGravadorAgendamento;
+package petShop.agendamento.gravadorAgendamento;
 
 import petShop.adocao.classes.Adocao;
 import petShop.agendamento.classes.Agendamento;

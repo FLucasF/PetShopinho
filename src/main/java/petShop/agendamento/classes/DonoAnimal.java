@@ -1,5 +1,10 @@
 package petShop.agendamento.classes;
 
+/***
+ *Classe para objetos do tipo DonoAnimal, onde serão contidos, valores e métodos para o mesmo.
+ *@author Lucas Felipe
+ */
+
 public class DonoAnimal {
     private String nomeDono;
     public DonoAnimal(String nomeDono) {

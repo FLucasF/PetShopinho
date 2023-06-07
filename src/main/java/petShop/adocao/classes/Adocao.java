@@ -1,5 +1,10 @@
 package petShop.adocao.classes;
 
+/***
+ * Classe para objetos do tipo Adocao, onde serão contidos, valores e métodos para o mesmo.
+ * @author Lucas Felipe
+ */
+
 public class Adocao {
     private String nomeAnimal;
     private String tamanhoAnimal;

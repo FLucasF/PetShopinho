@@ -14,11 +14,15 @@ import petShop.agendamento.exceptions.AgendamentoNaoEncontradoException;
 import petShop.agendamento.exceptions.HorarioInformadoExisteException;
 import petShop.agendamento.exceptions.HorarioNaoInformadoException;
 import petShop.agendamento.exceptions.ListaAgendamentoVaziaException;
-import petShop.agendamento.gerenciamentoGravadorAgendamento.GravadorDeAgendamento;
-
+import petShop.agendamento.gravadorAgendamento.GravadorDeAgendamento;
 import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
+
+/***
+ * Classe aonde são utilizados todos os métodos, classe main.
+ * @author Lucas Felipe
+ */
 
 public class MainUser {
     public static void main(String[] args) {

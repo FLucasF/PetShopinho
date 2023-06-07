@@ -1,4 +1,4 @@
-package petShop.agendamento.gerenciamentoGravadorAgendamento;
+package petShop.agendamento.gravadorAgendamento;
 
 import java.io.*;
 import java.util.ArrayList;
