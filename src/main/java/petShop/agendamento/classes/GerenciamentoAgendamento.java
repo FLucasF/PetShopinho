@@ -55,17 +55,17 @@ public class GerenciamentoAgendamento implements InterfaceAgendamento {
     @Override
     public String pesquisarAgendamentoBaseadoNoDia(String diaAgendamentoVerificar) throws AgendamentoNaoEncontradoException, ListaAgendamentoVaziaException {
         if (!this.agendamentos.isEmpty()) {
-            String msg = "";
+            StringBuilder msg = new StringBuilder();
             for (Agendamento a : this.agendamentos) {
                 if (a.getHorario().getDia().equals(diaAgendamentoVerificar)) {
-                    msg += a + "\n" + "==--==" + "\n";
+                    msg.append(a).append("\n").append("==--==").append("\n");
                 }
             }
-            if(msg.equals("")) {
+            if(msg.toString().equals("")) {
                 throw new AgendamentoNaoEncontradoException("Não existe agendamento cadastrado no dia" +
                         " informado em agendamentos");
             }
-            return msg;
+            return msg.toString();
         }
         throw new ListaAgendamentoVaziaException("A lista de agendamentos está vazia."); //TODO: Verificar se a mensagem está correta
     }

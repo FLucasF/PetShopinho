@@ -51,16 +51,16 @@ public class GerenciamentoAdocao implements InterfaceAdocao {
     @Override
     public String pesquisarAnimalPeloTamanho(String tamanhoDoAnimalVerificar) throws AnimalNaoEncontradoException, ListaAnimalVaziaException {
         if (!this.animais.isEmpty()) {
-            String msg = "";
+            StringBuilder msg = new StringBuilder();
             for (Adocao a : this.animais) {
                 if (a.getTamanhoAnimal().equals(tamanhoDoAnimalVerificar)) {
-                    msg += a + "\n" + "==--==" + "\n";
+                    msg.append(a).append("\n").append("==--==").append("\n");
                 }
             }
-            if (msg.equals("")) {
+            if (msg.toString().equals("")) {
                 throw new AnimalNaoEncontradoException("Animal do tamanho informado não foi encontrado na lista animais.");
             }
-            return msg;
+            return msg.toString();
         }
         throw new ListaAnimalVaziaException("A lista animais se encontra vazia.");
     }

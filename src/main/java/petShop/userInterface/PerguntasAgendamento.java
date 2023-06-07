@@ -29,7 +29,7 @@ public class PerguntasAgendamento {
 
         boolean continuar;
         String tipoDeServico = "";
-        String nomeDono = "";
+        String nomeDono;
 
         DonoAnimal donoAnimal = new DonoAnimal();
         Adocao animal = new Adocao();
@@ -78,9 +78,7 @@ public class PerguntasAgendamento {
             return new Agendamento();
         }
 
-        Agendamento animalAgendado = new Agendamento(donoAnimal, animal, horario, tipoDeServico);
-
-        return animalAgendado;
+        return new Agendamento(donoAnimal, animal, horario, tipoDeServico);
     }
 
     /**

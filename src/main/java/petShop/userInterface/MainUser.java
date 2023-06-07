@@ -7,7 +7,6 @@ import petShop.adocao.exceptions.AnimalNaoEncontradoException;
 import petShop.adocao.exceptions.FalhaAoCadastrarAnimalException;
 import petShop.adocao.exceptions.ListaAnimalVaziaException;
 import petShop.adocao.gravadorAdocao.GravadorDeAdocao;
-import petShop.adocao.gravadorAdocao.GravadorDeDadosAdocao;
 import petShop.agendamento.classes.Agendamento;
 import petShop.agendamento.classes.GerenciamentoAgendamento;
 import petShop.agendamento.exceptions.AgendamentoNaoEncontradoException;
@@ -40,8 +39,6 @@ public class MainUser {
         //Instanciando parte do gravador
         GravadorDeAdocao gravadorDeAdocao = new GravadorDeAdocao();
         GravadorDeAgendamento gravadorDeAgendamento = new GravadorDeAgendamento();
-
-        GravadorDeDadosAdocao gravadorDeDadosAdocao = new GravadorDeDadosAdocao();
 
         try {
             gerenciamentoAdocao.setAnimais(gravadorDeAdocao.recuperarAdocao());
@@ -222,18 +219,18 @@ public class MainUser {
     }
 
     public static String obterTextoComListaDeAnimais(List<Adocao> animais) {
-        String msg = "";
+        StringBuilder msg = new StringBuilder();
         for (Adocao a : animais) {
-            msg += a.toString() + "\n" + "=-=" + "\n";//varre a lista de animais e concatena o toString na variável msg
+            msg.append(a.toString()).append("\n").append("=-=").append("\n");//varre a lista de animais e concatena o toString na variável msg
         }
-        return msg;
+        return msg.toString();
     }//Fim do método varrerListaAnimal
     public static String obterTextoComListaDeAgendamento(List<Agendamento> agendamentos) {
-        String msg = "";
+        StringBuilder msg = new StringBuilder();
         for (Agendamento a : agendamentos) {
-            msg += a.toString() + "\n" + "=-=" + "\n";//varre a lista de animais e concatena o toString na variável msg
+            msg.append(a.toString()).append("\n").append("=-=").append("\n");//varre a lista de animais e concatena o toString na variável msg
         }
-        return msg;
+        return msg.toString();
     }//Fim do método varrerListaAnimal
 
 
